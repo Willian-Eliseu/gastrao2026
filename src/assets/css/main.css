@@ -1,0 +1,28 @@
+@import 'bootstrap';
+
+.reveal-base {
+    /* Valores de fallback */
+    --reveal-x: 0px;
+    --reveal-y: 20px;
+    --reveal-duration: 0.8s;
+    --reveal-delay: 0s;
+
+    opacity: 0;
+    transform: translate(var(--reveal-x), var(--reveal-y));
+
+    /* Variáveis de tempo */
+    transition:
+        opacity var(--reveal-duration) ease-out var(--reveal-delay),
+        transform var(--reveal-duration) cubic-bezier(0.165, 0.84, 0.44, 1) var(--reveal-delay);
+
+    will-change: transform, opacity;
+}
+
+.reveal-active {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.position-relative {
+    position: relative;
+}
