@@ -1,9 +1,21 @@
 <script setup>
 import Layout from '@/layouts/DefaultLayout.vue'
-import { onMounted, ref } from 'vue';
+import { onMounted, ref } from 'vue'
+import { useAlert } from '@/services/alertService'
 
+const { showAlert } = useAlert()
 const ipAdress = ref('')
 const isBrazilian = ref(false)
+const formularyData = ref({
+    treatment: '',
+    name: '',
+    email: '',
+    emailConfirmation: '',
+    cellphone: '',
+    country: '',
+    contactConsent: false
+})
+const isSubmiting = ref(false)
 
 const isIPAdressBrazilian = async () => {
     try {
@@ -21,12 +33,18 @@ const getIpAdress = async () => {
         const response = await fetch('https://api.ipify.org?format=json');
         const data = await response.json();
         ipAdress.value = data.ip;
-        if(ipAdress.value){
+        if (ipAdress.value) {
             isIPAdressBrazilian().then(isIPBrazilian => {
                 if (isIPBrazilian) {
                     isBrazilian.value = true
                     console.log('The user is accessing from Brazil.');
-                    //chamar a mensagem para avisar o usuário que o acesso online é apenar para fora do Brasil
+                    showAlert({
+                        title: 'Atenção',
+                        message: 'O acesso online ao Gastrão 2026 é exclusivo para usuários fora do Brasil. Por favor, entre em contato conosco para mais informações sobre como participar do evento.',
+                        type: 'warning'
+                    })
+                    //descomentar depois
+                    //window.location.href = 'https://gastrao.org.br'
                 } else {
                     console.log('The user is not accessing from Brazil.');
                 }
@@ -37,6 +55,11 @@ const getIpAdress = async () => {
     }
 }
 
+const handleSubmit = () => {
+    isSubmiting.value = true
+    console.log('Formulário enviado:', formularyData.value);
+}
+
 onMounted(() => {
     getIpAdress()
 })
@@ -45,11 +68,124 @@ onMounted(() => {
 <template>
     <Layout>
         <main>
-            <div class="container py-3 py-lg-5">
-                <h1 class="text-center">
-                    SUBSCRIBE
-                </h1>
-            </div>
+            <section class="bg-default" style="min-height: calc(100dvh - (241px + 76px));">
+                <div class="container py-3 py-lg-5">
+                    <!-- title -->
+                    <div class="row">
+                        <div class="col">
+                            <h1 class="text-center mb-3 text-principal fw-bold" v-reveal="'bottom'">Subscribe</h1>
+                            <h3 class="text-center mb-3 text-principal fw-semibold" v-reveal="'bottom'">53º Gastrão</h3>
+                        </div>
+                    </div>
+
+                    <!-- form -->
+                    <div class="row">
+                        <div class="col-lg-9 mx-auto">
+                            <form @submit.prevent="handleSubmit">
+                                <div class="container">
+                                    <div class="row mb-lg-3">
+                                        <div class="col-md-3 mb-3 mb-md-0" v-reveal="'bottom'">
+                                            <div class="form-group">
+                                                <label for="treatment" class="text-principal fw-semibold fs-5"><sup
+                                                        class="text-required">*</sup>Treatment</label>
+                                                <select name="treatment" id="treatment"
+                                                    v-model="formularyData.treatment"
+                                                    class="form-select border-1 border-secondary rounded-0 fs-5" required>
+                                                    <option value="" disabled>Select your treatment</option>
+                                                    <option value="Doctor">Doctor</option>
+                                                    <option value="Professor">Professor</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9 mb-3 mb-md-0" v-reveal="'bottom'">
+                                            <div class="form-group">
+                                                <label for="name" class="text-principal fw-semibold fs-5"><sup
+                                                        class="text-required">*</sup>Full Name</label>
+                                                <input type="text" id="name" v-model="formularyData.name"
+                                                    class="form-control border-1 border-secondary rounded-0 fs-5"
+                                                    placeholder="Enter your name" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-lg-3">
+                                        <div class="col-md-6 mb-3 mb-md-0" v-reveal="'bottom'">
+                                            <div class="form-group">
+                                                <!-- cellphone -->
+                                                <label for="cellphone" class="text-principal fw-semibold fs-5"><sup
+                                                        class="text-required">*</sup>Cellphone</label>
+                                                <input type="text" id="cellphone" v-model="formularyData.cellphone"
+                                                    class="form-control border-1 border-secondary rounded-0 fs-5"
+                                                    placeholder="Enter your cellphone" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-3 mb-md-0" v-reveal="'bottom'">
+                                            <div class="form-group">
+                                                <!-- country -->
+                                                <label for="country" class="text-principal fw-semibold fs-5"><sup
+                                                        class="text-required">*</sup>Country</label>
+                                                <input type="text" id="country" v-model="formularyData.country"
+                                                    class="form-control border-1 border-secondary rounded-0 fs-5"
+                                                    placeholder="Enter your country" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-lg-3">
+                                        <div class="col-md-6 mb-3 mb-md-0" v-reveal="'bottom'">
+                                            <div class="form-group">
+                                                <!-- email -->
+                                                <label for="email" class="text-principal fw-semibold fs-5"><sup
+                                                        class="text-required">*</sup>Email</label>
+                                                <input type="email" id="email" v-model="formularyData.email"
+                                                    class="form-control border-1 border-secondary rounded-0 fs-5"
+                                                    placeholder="Enter your email" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-3 mb-md-0" v-reveal="'bottom'">
+                                            <div class="form-group">
+                                                <!-- email confirmation -->
+                                                <label for="emailConfirmation" class="text-principal fw-semibold fs-5"><sup
+                                                        class="text-required">*</sup>Confirm Email</label>
+                                                <input type="email" id="emailConfirmation"
+                                                    v-model="formularyData.emailConfirmation"
+                                                    class="form-control border-1 border-secondary rounded-0 fs-5"
+                                                    placeholder="Confirm your email" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-lg-3">
+                                        <div class="col" v-reveal="'bottom'">
+                                            <div class="form-check">
+                                                <input class="form-check-input border-1 border-secondary border rounded-0" type="checkbox" id="contactConsent" v-model="formularyData.contactConsent">
+                                                <label class="form-check-label fs-5 text-principal" for="contactConsent">
+                                                    I agree to receive event information as outlined in <a href="https://privacidade.tbr.com.br/" target="_blank" class="fw-semibold text-decoration-none text-required">TBR's privacy policy</a>.
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="fs-5 mb-2 text-principal" v-reveal="'bottom'">
+                                                By subscribing you confirm, the veracity of the information provided.
+                                            </p>
+                                            <p class="fs-5 text-principal" v-reveal="'bottom'">
+                                                A confirmation email will be sent to you with further instructions.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4 mx-auto d-grid" v-reveal="'bottom'">
+                                            <button type="submit" class="btn btn-default fs-5 rounded-4 px-5" :disabled="isSubmiting">
+                                                <font-awesome-icon icon="fa-solid fa-spinner" spin v-if="isSubmiting" />
+                                                {{ isSubmiting ? 'Submitting... please wait' : 'Subscribe' }}
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
     </Layout>
 </template>

@@ -31,8 +31,28 @@
     background: url('@/assets/img/background.png') no-repeat center / cover #F1EDF6;
 }
 
+.text-required{
+    color: #A24982;
+}
+
 .tds{
     font-size: 12px;
+}
+
+.text-principal {
+    color: #112C6E;
+}
+
+.btn-default{
+    background-color: #A24982;
+    color: white;
+}
+
+.btn-default:hover{
+    background-color: #8a3d6e;
+    color: white;
+    transform: translateY(-4px);
+    transition: all 0.3s ease-in-out;
 }
 
 @media (min-width: 992px){
