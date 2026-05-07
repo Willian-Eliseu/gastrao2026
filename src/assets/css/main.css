@@ -26,3 +26,17 @@
 .position-relative {
     position: relative;
 }
+
+.bg-default{
+    background: url('@/assets/img/background.png') no-repeat center / cover #F1EDF6;
+}
+
+.tds{
+    font-size: 12px;
+}
+
+@media (min-width: 992px){
+    .tds{
+        font-size: 24px;
+    }
+}
