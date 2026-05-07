@@ -1,0 +1,1 @@
+import{f as e,k as t,p as n,w as r}from"./website-W82lRlli.js";import{t as i}from"./DefaultLayout-DLwlCuJ3.js";var a={__name:`LiveView`,setup(a){return(a,o)=>(r(),n(i,null,{default:t(()=>[...o[0]||=[e(`main`,null,[e(`div`,{class:`container py-3 py-lg-5`},[e(`h1`,{class:`text-center`},` LIVE `)])],-1)]]),_:1}))}};export{a as default};
