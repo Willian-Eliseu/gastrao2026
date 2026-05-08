@@ -3,7 +3,7 @@ const sessionData = JSON.parse(sessionStorage.getItem('userData') ?? '{}')
 
 export const useSiteStore = defineStore('siteStore', {
   state: () => ({
-    isAuthenticated: sessionData.enabled ?? false,
+    isAuthenticated: sessionData.isAuthenticated ?? false,
     isEnabled: sessionData.isEnabled ?? false,
     firstname: sessionData.firstname ?? '',
     lastname: sessionData.lastname ?? '',

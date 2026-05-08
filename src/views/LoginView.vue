@@ -1,16 +1,61 @@
 <script setup>
 import Layout from '@/layouts/DefaultLayout.vue'
-import { ref } from 'vue'
-const email = ref('')
+import { reactive, ref } from 'vue'
+import api from '@/services/api'
+import { useRouter, RouterLink } from 'vue-router';
+import { useAlert } from '@/services/alertService'
+import { useSiteStore } from '@/stores/website';
+
+const { showAlert } = useAlert()
+const siteStore = useSiteStore()
+const router = useRouter()
 const isSendingLoginRequest = ref(false)
 
-const handleLogin = () => {
+const formLogin = reactive({
+    email: '',
+})
+
+const handleLogin = async () => {
     isSendingLoginRequest.value = true
-    console.log('Login attempted with email:', email.value)
-    // Here you would typically handle authentication logic, such as sending a request to your backend.
+    
+    try {
+        const response = await api.get(`/login/?evento=${siteStore.eventId}&email=${formLogin.email}`)
+        const data = response.data
+
+        if(data.code == 0){
+            throw new Error(data.message)        
+        }
+
+        let userData = data.dados
+        siteStore.login({
+            isAuthenticated: 'true',
+            isEnabled: (userData.enabled == 1) ? true : false,
+            firstname: userData.firstname,
+            lastname: userData.lastname,
+            email: userData.email,
+            userId: userData.id
+        })
+
+        showAlert({
+            title: 'Success',
+            message: 'Wealcome back!',
+            type: 'success'
+        })
+
+        router.push({
+            name: 'content'
+        })
+
+    } catch (error) {
+        showAlert({
+            title: 'Error',
+            message: error.message,
+            type: 'error'
+        })
+    } finally {
+        isSendingLoginRequest.value = false
+    }
 }
-
-
 
 </script>
 
@@ -35,7 +80,7 @@ const handleLogin = () => {
                                         <div class="col">
                                             <div class="form-group" v-reveal="'bottom'">
                                                 <label for="email" class="text-principal mb-1">Email:</label>
-                                                <input type="email" id="email" v-model="email"
+                                                <input type="email" id="email" v-model="formLogin.email"
                                                     class="form-control border-1 border-secondary rounded-0 fs-5"
                                                     placeholder="Enter your email" required>
                                             </div>
