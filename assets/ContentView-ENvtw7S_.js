@@ -1,1 +1,0 @@
-import{f as e,k as t,p as n,w as r}from"./website-BsXi_Q8P.js";import{t as i}from"./DefaultLayout-BOPFBuRw.js";var a={__name:`ContentView`,setup(a){return(a,o)=>(r(),n(i,null,{default:t(()=>[...o[0]||=[e(`main`,null,null,-1)]]),_:1}))}};export{a as default};
