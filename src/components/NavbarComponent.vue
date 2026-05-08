@@ -32,9 +32,10 @@ onMounted(() => {
     <header>
         <nav :class="['navbar navbar-expand-xl bg-light shadow', { 'fixed-top': fixedNavbar }]" data-bs-theme="light">
             <div class="container py-1">
-                <a class="navbar-brand fw-bold fs-3" href="/">
+                <a class="navbar-brand fw-semibold fst-italic fs-3 text-principal" href="/">
                     <!-- logo -->
                     <img src="@/assets/img/logo.png" alt="Logo" height="40" class="d-inline-block align-text-top me-2">
+                    35th DTEC
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

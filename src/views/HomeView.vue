@@ -46,7 +46,7 @@ import Layout from '@/layouts/DefaultLayout.vue'
                 <div class="container py-3 py-lg-5 px-4 px-lg-0">
                     <div class="row">
                         <div class="col">
-                            <h2 class="text-center mb-4 text-principal fw-bold" v-reveal="'bottom'">Join us at Gastrão 2026!</h2>
+                            <h2 class="text-center mb-4 text-principal fw-bold" v-reveal="'bottom'">Join us in the <br> <span class="fs-1">Digestive and Therapeutic Endoscopy Course</span> <br> at Gastrão 2026!</h2>
                         </div>
                     </div>
                     <div class="row">
@@ -56,7 +56,7 @@ import Layout from '@/layouts/DefaultLayout.vue'
                         </div>
                         <div class="col p-3 p-lg-0 ps-lg-5 align-self-center">
                             <p class="text-principal mb-2 tds" v-reveal="'bottom'">
-                                Don't miss the opportunity to be part of <b>Gastrão 2026 - Course in Therapeutic Digestive Endoscopy</b>! Join us for an unforgettable
+                                Don't miss the opportunity to be part of <b>Digestive and Therapeutic Endoscopy Course</b> at Gastrão 2026! Join us for an unforgettable
                                 experience filled with knowledge, networking, and innovation in the field of digestive
                                 health.
                             </p>
@@ -64,7 +64,7 @@ import Layout from '@/layouts/DefaultLayout.vue'
                                 Register now to participate via internet!
                             </p>
                             <p class="text-principal mb-2 tds" v-reveal="'bottom'">
-                                Access to the 35th course on therapeutic digestive endoscopy is now available online for participants outside of Brazil.
+                                Access to the 35th Digestive and Therapeutic Endoscopy Course is now available online for participants outside of Brazil.
                             </p>
                             <p class="text-principal mb-2 tds" v-reveal="'bottom'">
                                 If you are in Brazil, acces the registration form on the official website of the event: <a href="https://gastrao.org.br/" target="_blank" class="text-principal">gastrao.org.br</a>

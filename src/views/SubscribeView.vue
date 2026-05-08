@@ -40,7 +40,7 @@ const getIpAdress = async () => {
                     console.log('The user is accessing from Brazil.');
                     showAlert({
                         title: 'Atenção',
-                        message: 'O acesso online ao Gastrão 2026 é exclusivo para usuários fora do Brasil. Por favor, entre em contato conosco para mais informações sobre como participar do evento.',
+                        message: 'A transmissão via internet do 35º Curso de Endoscopia Digestiva Terapêutica é liberada apenas para outros países. Você será redirecionado para o site oficial do Gastrão.',
                         type: 'warning'
                     })
                     //descomentar depois
@@ -74,7 +74,7 @@ onMounted(() => {
                     <div class="row">
                         <div class="col">
                             <h1 class="text-center mb-3 text-principal fw-bold" v-reveal="'bottom'">Subscribe</h1>
-                            <h3 class="text-center mb-3 text-principal fw-semibold" v-reveal="'bottom'">53º Gastrão</h3>
+                            <h3 class="text-center mb-3 text-principal fw-semibold" v-reveal="'bottom'">35º Digestive and Therapeutic Endoscopy Course</h3>
                         </div>
                     </div>
 

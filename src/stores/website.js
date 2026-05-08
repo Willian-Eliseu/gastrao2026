@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-const sessionData = JSON.parse(localStorage.getItem('userData') ?? '{}')
+const sessionData = JSON.parse(sessionStorage.getItem('userData') ?? '{}')
 
 export const useSiteStore = defineStore('siteStore', {
   state: () => ({
@@ -8,7 +8,9 @@ export const useSiteStore = defineStore('siteStore', {
     lastname: sessionData.lastname ?? '',
     email: sessionData.email ?? '',
     userId: sessionData.id ?? 0,
-    role: sessionData.role ?? ''
+    role: sessionData.role ?? '',
+    tbreadId: 0,
+    eventId: 0,
   }),
   actions: {
     login(userData){
@@ -18,7 +20,7 @@ export const useSiteStore = defineStore('siteStore', {
       this.email = userData.email
       this.userId = userData.id
       this.role = userData.role
-      localStorage.setItem('userData', JSON.stringify(userData))
+      sessionStorage.setItem('userData', JSON.stringify(userData))
     },
     logout(){
       this.isAuthenticated = false
@@ -27,7 +29,7 @@ export const useSiteStore = defineStore('siteStore', {
       this.email = ''
       this.userId = 0
       this.role = ''
-      localStorage.removeItem('userData')
+      sessionStorage.removeItem('userData')
     },
   },
 })

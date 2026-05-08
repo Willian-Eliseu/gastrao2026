@@ -26,7 +26,7 @@ watch(isOpen, (value) => {
     <dialog ref="dialogRef" class="md-dialog" @cancel.prevent="handleCancel">
         <div class="md-content">
             <div class="md-body">
-                <h3 class="md-title">{{ options.title }}</h3>
+                <h3 class="md-title mb-2">{{ options.title }}</h3>
                 <p>{{ options.message }}</p>
             </div>
             <div class="md-actions">
