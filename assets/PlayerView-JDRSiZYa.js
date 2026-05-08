@@ -1,0 +1,1 @@
+import{f as e,k as t,p as n,w as r}from"./website-BsXi_Q8P.js";import{t as i}from"./DefaultLayout-BOPFBuRw.js";var a={__name:`PlayerView`,setup(a){return(a,o)=>(r(),n(i,null,{default:t(()=>[...o[0]||=[e(`main`,null,[e(`div`,{class:`container py-3 py-lg-5`},[e(`h1`,{class:`text-center`},` PLAYER `)])],-1)]]),_:1}))}};export{a as default};
