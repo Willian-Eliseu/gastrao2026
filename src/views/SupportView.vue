@@ -53,6 +53,7 @@ const handleSubmitSupport = async () => {
 
 onMounted(() => {
     getIp()
+    supportData.value.tratamento = ''
 })
 </script>
 
@@ -93,7 +94,7 @@ onMounted(() => {
                                                     v-model="supportData.tratamento"
                                                     class="form-select border-1 border-secondary rounded-0 fs-5"
                                                     required>
-                                                    <option value="" disabled>Select your treatment</option>
+                                                    <option value="">Select your treatment</option>
                                                     <option value="Doctor">Doctor</option>
                                                     <option value="Professor">Professor</option>
                                                 </select>
