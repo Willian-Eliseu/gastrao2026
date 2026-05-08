@@ -12,7 +12,7 @@ const isLive = ref(false);
 
 const verifyLiveEvent = async () => {
     try {
-        const response = await api.post('/livestatus/', {
+        const response = await api.post('/livestatus/index.php', {
             id: siteStore.tbreadId
         });
 

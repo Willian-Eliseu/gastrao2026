@@ -38,7 +38,7 @@
             <div class="container text-white">
                 <div class="row justify-content-between align-items-center">
                     <div class="col-md-auto mb-3 mb-md-0">
-                        &copy; 2026 Curso de Endoscopia Digestiva Terapêutica - Todos os direitos reservados.
+                        &copy; 2026 Digestive and Therapeutic Endoscopy Course - All rights reserved.
                     </div>
                     <div class="col-md-auto">
                         Developed by <a href="https://tbr.com.br" class="text-decoration-none fw-bold text-white"

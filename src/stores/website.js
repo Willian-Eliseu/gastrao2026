@@ -9,8 +9,8 @@ export const useSiteStore = defineStore('siteStore', {
     lastname: sessionData.lastname ?? '',
     email: sessionData.email ?? '',
     userId: sessionData.id ?? 0,
-    tbreadId: 0,
-    eventId: 0,
+    tbreadId: 1039,
+    eventId: 398,
   }),
   actions: {
     login(userData){

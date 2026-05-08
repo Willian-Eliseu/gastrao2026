@@ -1,6 +1,5 @@
 <script setup>
 import Layout from '@/layouts/DefaultLayout.vue';
-import FloatBtnComponent from '@/components/FloatBtnComponent.vue';
 import ModuleComponent from '@/components/ModuleComponent.vue'
 import VideoCardGrid from '@/components/VideoCardGrid.vue'
 import VideoCardList from '@/components/VideoCardList.vue'
@@ -105,7 +104,6 @@ const verifyLogin = async () => {
 
 <template>
   <Layout>
-    <FloatBtnComponent />
     <main>
       <!-- título e descrição -->
       <section class="container py-5">

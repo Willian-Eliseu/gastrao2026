@@ -1,6 +1,5 @@
 <script setup>
 import Layout from '@/layouts/DefaultLayout.vue';
-import FloatBtnComponent from '@/components/FloatBtnComponent.vue'
 import { onMounted, ref } from 'vue';
 import VideoListComponent from '@/components/VideoListComponent.vue';
 import PlayerComponent from '@/components/PlayerComponent.vue';
@@ -54,7 +53,6 @@ function atualizaUrl(msg) {
 
 <template>
     <Layout>
-        <FloatBtnComponent />
         <main>
             <section class="container py-5">
                 <article class="row">
