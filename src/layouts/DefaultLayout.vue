@@ -15,7 +15,7 @@ import Footer from '@/components/FooterComponent.vue'
 #main_content {
     display: flex;
     flex-direction: column;
-    min-height: calc(100dvh - (241px + 76px));
+    min-height: calc(100dvh - (299px + 76px));
 }
 
 #site_footer {

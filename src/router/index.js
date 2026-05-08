@@ -28,9 +28,9 @@ const router = createRouter({
       path: '/content',
       name: 'content',
       component: () => import('@/views/ContentView.vue'),
-      meta: {
-        requiresAuth: true,
-      }
+      // meta: {
+      //   requiresAuth: true,
+      // }
     },
     {
       path: '/live',
