@@ -38,7 +38,7 @@ const handleLogin = async () => {
 
         showAlert({
             title: 'Success',
-            message: 'Wealcome back!',
+            message: 'Welcome back!',
             type: 'success'
         })
 
