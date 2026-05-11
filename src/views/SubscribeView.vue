@@ -55,7 +55,7 @@ const getIpAdress = async () => {
     }
 }
 
-const handleSubmit = () => {
+const handleSubmit = async () => {
     if (formularyData.value.dataEmail != formularyData.value.confirm_email) {
         showAlert({
             title: 'Attention',
@@ -70,9 +70,10 @@ const handleSubmit = () => {
     payload.dataEvento = siteStore.eventId
     payload.dataPagina = 'Gastrão 2026';
     payload.dataEnable = 1;
+    payload.dataCategory = 1164;
 
     try {
-        const response = api.post('/subscribe/', payload)
+        const response = await api.post('/subscribe/index.php', payload)
         const data = response.data
 
         if(data.estado != 1){
@@ -150,10 +151,10 @@ onMounted(() => {
                                                 <label for="treatment" class="text-principal fw-semibold fs-5"><sup
                                                         class="text-required">*</sup>Treatment</label>
                                                 <select name="treatment" id="treatment"
-                                                    v-model="formularyData.treatment"
+                                                    v-model="formularyData.dataTreatment"
                                                     class="form-select border-1 border-secondary rounded-0 fs-5"
                                                     required>
-                                                    <option value="" disabled>Select your treatment</option>
+                                                    <option value="" disabled>Select</option>
                                                     <option value="Doctor">Doctor</option>
                                                     <option value="Professor">Professor</option>
                                                 </select>
@@ -163,7 +164,7 @@ onMounted(() => {
                                             <div class="form-group">
                                                 <label for="name" class="text-principal fw-semibold fs-5"><sup
                                                         class="text-required">*</sup>Full Name</label>
-                                                <input type="text" id="name" v-model="formularyData.name"
+                                                <input type="text" id="name" v-model="formularyData.dataName"
                                                     class="form-control border-1 border-secondary rounded-0 fs-5"
                                                     placeholder="Enter your name" required>
                                             </div>
@@ -175,7 +176,7 @@ onMounted(() => {
                                                 <!-- cellphone -->
                                                 <label for="cellphone" class="text-principal fw-semibold fs-5"><sup
                                                         class="text-required">*</sup>Cellphone</label>
-                                                <input type="text" id="cellphone" v-model="formularyData.cellphone"
+                                                <input type="text" id="cellphone" v-model="formularyData.dataCellphone"
                                                     class="form-control border-1 border-secondary rounded-0 fs-5"
                                                     placeholder="Enter your cellphone" required>
                                             </div>
@@ -185,7 +186,7 @@ onMounted(() => {
                                                 <!-- country -->
                                                 <label for="country" class="text-principal fw-semibold fs-5"><sup
                                                         class="text-required">*</sup>Country</label>
-                                                <input type="text" id="country" v-model="formularyData.country"
+                                                <input type="text" id="country" v-model="formularyData.dataCountry"
                                                     class="form-control border-1 border-secondary rounded-0 fs-5"
                                                     placeholder="Enter your country" required>
                                             </div>

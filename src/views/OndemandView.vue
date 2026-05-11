@@ -108,10 +108,10 @@ const verifyLogin = async () => {
       <!-- título e descrição -->
       <section class="container py-5">
         <h2 class="text-center fw-bold text-green">
-          SBGG - Distúrbios do Sono na Pessoa Idosa
+          Digestive and Therapeutic Endoscopy Course
         </h2>
         <p class="text-center fs-5">
-          O Webinar foi transmitido ao vivo no dia 21/10/2025.
+          Course broadcasted live on Gastrão 2026
         </p>
       </section>
 
@@ -120,8 +120,8 @@ const verifyLogin = async () => {
         <div class="p-3 border-secondary border rounded-4">
           <article class="row justify-content-between">
             <div class="col-6 col-md-4 col-lg-3">
-              <input type="text" class="form-control fs-5 rounded-3 border-secondary" placeholder="Busca"
-                aria-label="Busca" v-model="searchQuery" />
+              <input type="text" class="form-control fs-5 rounded-3 border-secondary" placeholder="Search"
+                aria-label="Search" v-model="searchQuery" />
             </div>
             <div class="col-auto">
               <div class="btn-group" role="group" aria-label="formato de exibição">

@@ -27,7 +27,7 @@ const handleSubmitSupport = async () => {
     payload.pagina = 'Gastrao 2026'
 
     try {
-        const response = await api.post('/support/', payload)
+        const response = await api.post('/support/index.php', payload)
         const data = response.data
         if (data.estado == 0) {
             throw new Error(data.message)
