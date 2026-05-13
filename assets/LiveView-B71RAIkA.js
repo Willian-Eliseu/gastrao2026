@@ -1,0 +1,1 @@
+import{T as e,j as t,m as n,p as r}from"./website-CvfH2EZ2.js";import{t as i}from"./DefaultLayout-CuFKvWN2.js";var a={__name:`LiveView`,setup(a){return(a,o)=>(e(),n(i,null,{default:t(()=>[...o[0]||=[r(`main`,null,[r(`div`,{class:`container py-3 py-lg-5`},[r(`h1`,{class:`text-center`},` LIVE `)])],-1)]]),_:1}))}};export{a as default};
