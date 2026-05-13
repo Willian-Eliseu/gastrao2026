@@ -26,6 +26,16 @@ const isIPAdressBrazilian = async () => {
     }
 }
 
+const callMessage = async () => {
+    await showAlert({
+        title: 'Atenção',
+        message: 'A transmissão via internet do 35º Curso de Endoscopia Digestiva Terapêutica é liberada apenas para outros países. Você será redirecionado para o site oficial do Gastrão.',
+        type: 'warning'
+    })
+    //descomentar depois
+    window.location.href = 'https://gastrao.org.br'
+}
+
 const getIpAdress = async () => {
     try {
         const response = await fetch('https://api.ipify.org?format=json');
@@ -38,13 +48,7 @@ const getIpAdress = async () => {
                 if (isIPBrazilian) {
                     isBrazilian.value = true
                     console.log('The user is accessing from Brazil.');
-                    showAlert({
-                        title: 'Atenção',
-                        message: 'A transmissão via internet do 35º Curso de Endoscopia Digestiva Terapêutica é liberada apenas para outros países. Você será redirecionado para o site oficial do Gastrão.',
-                        type: 'warning'
-                    })
-                    //descomentar depois
-                    //window.location.href = 'https://gastrao.org.br'
+                    callMessage()
                 } else {
                     console.log('The user is not accessing from Brazil.');
                 }
@@ -76,7 +80,7 @@ const handleSubmit = async () => {
         const response = await api.post('/subscribe/index.php', payload)
         const data = response.data
 
-        if(data.estado != 1){
+        if (data.estado != 1) {
             throw new Error(data.message)
         }
 
@@ -135,8 +139,8 @@ onMounted(() => {
                     <div class="row">
                         <div class="col">
                             <h1 class="text-center mb-3 text-principal fw-bold" v-reveal="'bottom'">Subscribe</h1>
-                            <h3 class="text-center mb-3 text-principal fw-semibold" v-reveal="'bottom'">35º Digestive
-                                and Therapeutic Endoscopy Course</h3>
+                            <h3 class="text-center mb-3 text-principal fw-semibold" v-reveal="'bottom'">35th Therapeutic
+                                Digestive Endoscopy Course</h3>
                         </div>
                     </div>
 

@@ -108,7 +108,7 @@ const verifyLogin = async () => {
       <!-- título e descrição -->
       <section class="container py-5">
         <h2 class="text-center fw-bold text-green">
-          Digestive and Therapeutic Endoscopy Course
+          35th Therapeutic Digestive Endoscopy Course
         </h2>
         <p class="text-center fs-5">
           Course broadcasted live on Gastrão 2026

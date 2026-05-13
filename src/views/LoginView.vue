@@ -68,7 +68,7 @@ const handleLogin = async () => {
                     <div class="row">
                         <div class="col">
                             <h1 class="text-center mb-3 text-principal fw-bold" v-reveal="'bottom'">Login</h1>
-                            <h3 class="text-center mb-3 text-principal fw-semibold" v-reveal="'bottom'">35º Digestive and Therapeutic Endoscopy Course</h3>
+                            <h3 class="text-center mb-3 text-principal fw-semibold" v-reveal="'bottom'">35th Therapeutic Digestive Endoscopy Course</h3>
                         </div>
                     </div>
                     <!-- form -->
