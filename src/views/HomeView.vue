@@ -15,9 +15,15 @@ import Layout from '@/layouts/DefaultLayout.vue'
                         <div class="col-lg-6">
                             <p class="text-principal mb-0 tds p-3 p-lg-0" v-reveal="'bottom'">
                                 <b>Gastrão</b> marks over five decades of promoting internationally excellent scientific
-                                updates in Brazil. In <b>2026</b>, it reaffirms its commitment to quality education and
+                                updates in Brazil. 
+                                
+                            </p>
+                            <p class="text-principal mb-0 tds p-3 p-lg-0" v-reveal="'bottom'">
+                                In <b>2026</b>, it reaffirms its commitment to quality education and
                                 the
                                 exchange of experiences in clinical, surgical, and scientific fields.
+                            </p>
+                            <p class="text-principal mb-0 tds p-3 p-lg-0" v-reveal="'bottom'">
                                 Established as the largest event on the digestive system in the country, Gastrão
                                 attracts thousands of participants at each edition — including renowned specialists and
                                 professionals seeking knowledge about the latest innovations in the field.
@@ -48,13 +54,16 @@ import Layout from '@/layouts/DefaultLayout.vue'
                         <div class="col">
                             <h2 class="text-center mb-4 text-principal fw-bold" v-reveal="'bottom'">Join us in the <br> <span class="fs-1">35th Therapeutic Digestive Endoscopy Course</span> <br> at Gastrão 2026!</h2>
                         </div>
-                    </div>
+                    </div>                    
                     <div class="row">
                         <div class="col-md-auto mb-3 mb-lg-0 align-self-center">
                             <img src="@/assets/img/person_global.png" alt="" class="w-100 rounded-4 mx-auto d-block" v-reveal="'bottom'" style="max-width: 350px;">
                             <RouterLink to="/subscribe" class="btn btn-primary mt-3 d-block text-center rounded-4" v-reveal="'bottom'">Register Now</RouterLink>
                         </div>
                         <div class="col p-3 p-lg-0 ps-lg-5 align-self-center">
+                            <p class="text-principal mb-2 fw-bold tds" v-reveal="'bottom'">
+                                Live cases from Clinic Hospital of University of Sao Paulo (HC-FMUSP), Brazil.
+                            </p>
                             <p class="text-principal mb-2 tds" v-reveal="'bottom'">
                                 Don't miss the opportunity to be part of <b>35th Therapeutic Digestive Endoscopy Course</b> at Gastrão 2026! Join us for an unforgettable
                                 experience filled with knowledge, networking, and innovation in the field of digestive
