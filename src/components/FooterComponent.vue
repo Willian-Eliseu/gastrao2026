@@ -10,7 +10,7 @@
                     <div class="col-md-auto d-flex flex-lg-column align-items-center justify-content-center me-lg-3">
                         <img src="@/assets/img/sied_logo.png" alt="Logo SIED" width="130"
                             class="d-inline d-lg-block align-text-top">
-                        <img src="@/assets/img/logo_mundo_opge.jpg" alt="Logo OPGE" width="130"
+                        <img src="@/assets/img/opge.png" alt="Logo OPGE" width="220"
                             class="d-inline d-lg-block align-text-top rounded-3">
                     </div>
                     <div class="col-md-auto border-start border-light d-none d-lg-block">
