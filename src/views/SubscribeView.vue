@@ -15,13 +15,25 @@ const router = useRouter()
 const isSubmiting = ref(false)
 const emailConfirmed = ref(true)
 
-const isIPAdressBrazilian = async () => {
+const isIPAdressBrazilian = async (enderecoIp = ipAdress.value) => {
+    const ACCESS_KEY = '449ababc59916d5bd8dba67e36c56840';
     try {
-        const response = await fetch(`https://ipapi.co/${ipAdress.value}/json/`);
+        const response = await fetch(`//api.ipapi.com/${enderecoIp}?access_key=${ACCESS_KEY}`);
+        
+        if (!response.ok) {
+            throw new Error(`Erro na requisição: ${response.status}`);
+        }
+
         const data = await response.json();
+        
+        if (data.success === false) {
+            console.error('Erro da API:', data.error.info);
+            return false;
+        }
+
         return data.country_code === 'BR';
     } catch (error) {
-        console.error('Error fetching IP address information:', error);
+        console.error('Erro ao verificar o endereço IP:', error);
         return false;
     }
 }
