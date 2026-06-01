@@ -7,8 +7,8 @@ import Layout from '@/layouts/DefaultLayout.vue'
         <main>
             <!-- hero -->
             <section class="bg-hero align-items-center d-flex">
-                <div class="container py-3 py-lg-5">
-                    <div class="row">
+                <div class="container py-3">
+                    <!-- <div class="row">
                         <div class="col-lg-6 align-self-center mb-3 mb-lg-0">
                             <img src="@/assets/img/hero_front.png" alt="" class="img-fluid" v-reveal="'bottom'">
                         </div>
@@ -28,6 +28,33 @@ import Layout from '@/layouts/DefaultLayout.vue'
                                 attracts thousands of participants at each edition — including renowned specialists and
                                 professionals seeking knowledge about the latest innovations in the field.
                             </p>
+                        </div>
+                    </div> -->
+                    <div class="row">
+                        <div class="col-lg-6 mx-auto">
+                            <img src="@/assets/img/logo_curso.png" alt="" class="img-fluid" v-reveal="'bottom'">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-lg-8 mx-auto">
+                            <h2 class="text-center text-principal fw-bold mb-0" v-reveal="'bottom'">
+                                35th Therapeutic Digestive Endoscopy Course
+                            </h2>
+                            <p class="text-center text-principal mb-0 tds" v-reveal="'bottom'">
+                                Discover advanced techniques, their indications, and benefits in the clinical practice of endoscopy as a therapeutic tool.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-6 col-mg-4 col-lg-2 mx-auto">
+                            <img src="@/assets/img/data_curso.png" alt="" class="img-fluid" v-reveal="'bottom'">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-auto d-grid mx-auto">
+                            <RouterLink to="/subscribe" class="btn btn-default fs-5 rounded-pill px-5" v-reveal="'bottom'">
+                                Register here for the course
+                            </RouterLink>
                         </div>
                     </div>
                 </div>
