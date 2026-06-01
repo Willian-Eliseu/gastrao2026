@@ -104,7 +104,8 @@ const verifyLogin = async () => {
 
 <template>
   <Layout>
-    <main>
+    <main style="min-height: calc(100dvh - 349px);">
+      
       <!-- título e descrição -->
       <section class="container py-5">
         <h2 class="text-center fw-bold text-green">

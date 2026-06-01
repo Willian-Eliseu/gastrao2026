@@ -32,7 +32,7 @@ onMounted(() => {
 <template>
     <Layout>
         <main>
-            <section class="bg-default" style="min-height: calc(100dvh - (299px + 76px));">
+            <section class="bg-default" style="min-height: calc(100dvh - 349px);">
                 <div class="container py-3 py-lg-5">
                     <!-- title -->
                     <div class="row mb-4">
