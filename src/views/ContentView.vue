@@ -2,7 +2,6 @@
 import { onMounted, ref } from 'vue';
 import Layout from '@/layouts/DefaultLayout.vue';
 import { useRouter } from 'vue-router';
-import navigationControl from '@/services/navigationControl';
 import api from '@/services/api';
 import { useSiteStore } from '@/stores/website';
 
@@ -45,7 +44,7 @@ onMounted(() => {
 
                     <div class="row g-3 justify-content-center">
                         <div class="col-md-4 d-grid" v-if="isLive">
-                            <button class="btn btn-default rounded-4 p-3 shadow box-size" @click="navigationControl('/live')">
+                            <button class="btn btn-default rounded-4 p-3 shadow box-size" @click="router.push('/live')">
                                 <h4 class="text-center">Watch the live stream</h4>
                                 <p class="text-center">
                                     The course will be on live stream from 24th to 26th of May 2026.
@@ -54,7 +53,7 @@ onMounted(() => {
                         </div>
 
                         <div class="col-md-4 d-grid">
-                            <button class="btn btn-default rounded-4 p-3 shadow box-size" @click="navigationControl('/ondemand')">
+                            <button class="btn btn-default rounded-4 p-3 shadow box-size" @click="router.push('/ondemand')">
                                 <h4 class="text-center">Watch the recorded material</h4>
                                 <p class="text-center">
                                     The recorded material will be available after the content has been edited.
@@ -63,7 +62,7 @@ onMounted(() => {
                         </div>
 
                         <!-- <div class="col-md-4 d-grid d-none">
-                            <button class="btn btn-blue p-3 shadow box-size" @click="navigationControl('/certificado')">
+                            <button class="btn btn-blue p-3 shadow box-size" @click="router.push('/certificado')">
                                 <h4 class="text-center">Baixe seu Certificado</h4>
                                 <p class="text-center">
                                     O certificado estará disponível apenas para os usuários que assistirem o curso

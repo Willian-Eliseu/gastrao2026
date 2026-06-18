@@ -33,7 +33,11 @@ const handleLogin = async () => {
             firstname: userData.firstname,
             lastname: userData.lastname,
             email: userData.email,
-            userId: userData.id
+            userId: userData.id,
+            userHash: userData.control_hash,
+            userCity: userData.ip_city,
+            userState: userData.ip_subdivision,
+            userIp: userData.ip
         })
 
         showAlert({
