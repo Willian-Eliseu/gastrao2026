@@ -57,6 +57,8 @@ const pagina = ref('');
 const streamkey = ref('');
 const userHash = ref('');
 const caption = ref('');
+const captionDelay = ref('');
+const newbroadcast = ref(0);
 
 const verifyLiveStatus = async () => {
     try {
@@ -68,6 +70,8 @@ const verifyLiveStatus = async () => {
         pagina.value = data.pagina;
         streamkey.value = data.streamkey;
         caption.value = data.caption;
+        captionDelay.value = data.captiondelay;
+        newbroadcast.value = data.newbroadcast;
     } catch (error) {
         console.error('Erro ao verificar o status da live:', error.message);
     }
@@ -137,8 +141,10 @@ const loadLiveContent = async () => {
     userData = btoa(userData);
 
     let verto = caption.value == 's' ? `&verto=${streamkey.value}` : '';
-    playerFrame.value.src = `https://player.tbr.srv.br/?type=webrtc&source=${streamkey.value}${verto}&userdata=${userData}`;
-    
+    let delay = (captionDelay.value > 0 && caption.value == 's') ? `&drift=${captionDelay.value}` : '';
+    let type = newbroadcast.value == 1 ? 'webrtc' : 'hls';
+    playerFrame.value.src = `https://player.tbr.srv.br/?type=${type}&source=${streamkey.value}${verto}${delay}&userdata=${userData}`;
+    console.log(playerFrame.value.src);
 
     //chat
     let todayDate = new Date();
